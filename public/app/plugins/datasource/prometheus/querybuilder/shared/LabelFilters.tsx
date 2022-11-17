@@ -40,7 +40,7 @@ export function LabelFilters({ labelsFilters, onChange, onGetLabelNames, onGetLa
 
   return (
     <EditorFieldGroup>
-      <EditorField label="Label filters" error={error} invalid={!!error}>
+      <EditorField label="标签过滤器" error={error} invalid={!!error}>
         <EditorList
           items={items}
           onChange={onLabelsChange}

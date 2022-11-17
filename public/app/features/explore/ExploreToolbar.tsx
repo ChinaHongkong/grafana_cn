@@ -81,7 +81,7 @@ class UnConnectedExploreToolbar extends PureComponent<Props> {
   renderRefreshPicker = (showSmallTimePicker: boolean) => {
     const { loading, refreshInterval, isLive } = this.props;
 
-    let refreshPickerText: string | undefined = loading ? 'Cancel' : 'Run query';
+    let refreshPickerText: string | undefined = loading ? '取消' : '执行查询';
     let refreshPickerTooltip = undefined;
     let refreshPickerWidth = '108px';
     if (showSmallTimePicker) {
@@ -166,11 +166,11 @@ class UnConnectedExploreToolbar extends PureComponent<Props> {
           <>
             {!splitted ? (
               <ToolbarButton tooltip="Split the pane" onClick={this.onOpenSplitView} icon="columns" disabled={isLive}>
-                Split
+                分裂
               </ToolbarButton>
             ) : (
               <ToolbarButton tooltip="Close split pane" onClick={this.onCloseSplitView} icon="times">
-                Close
+                关闭
               </ToolbarButton>
             )}
 

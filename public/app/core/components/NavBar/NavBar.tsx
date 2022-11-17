@@ -45,7 +45,7 @@ export const NavBar = React.memo(() => {
     {
       id: SEARCH_ITEM_ID,
       onClick: onOpenSearch,
-      text: 'Search dashboards',
+      text: '搜索仪表板',
       icon: 'search',
     },
     menuOpen

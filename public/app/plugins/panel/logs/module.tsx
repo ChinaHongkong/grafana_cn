@@ -75,8 +75,8 @@ export const plugin = new PanelPlugin<Options>(LogsPanel)
         description: '',
         settings: {
           options: [
-            { value: LogsSortOrder.Descending, label: 'Newest first' },
-            { value: LogsSortOrder.Ascending, label: 'Oldest first' },
+            { value: LogsSortOrder.Descending, label: '最新优先' },
+            { value: LogsSortOrder.Ascending, label: '最早优先' },
           ],
         },
         defaultValue: LogsSortOrder.Descending,

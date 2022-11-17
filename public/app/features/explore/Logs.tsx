@@ -351,7 +351,7 @@ class UnthemedLogs extends PureComponent<Props, State> {
         />
         <div className={styles.logOptions} ref={this.topLogsRef}>
           <InlineFieldRow>
-            <InlineField label="Time" className={styles.horizontalInlineLabel} transparent>
+            <InlineField label="时间戳" className={styles.horizontalInlineLabel} transparent>
               <InlineSwitch
                 value={showTime}
                 onChange={this.onChangeTime}
@@ -360,7 +360,7 @@ class UnthemedLogs extends PureComponent<Props, State> {
                 id={`show-time_${exploreId}`}
               />
             </InlineField>
-            <InlineField label="Unique labels" className={styles.horizontalInlineLabel} transparent>
+            <InlineField label="特有的标签" className={styles.horizontalInlineLabel} transparent>
               <InlineSwitch
                 value={showLabels}
                 onChange={this.onChangeLabels}
@@ -369,7 +369,7 @@ class UnthemedLogs extends PureComponent<Props, State> {
                 id={`unique-labels_${exploreId}`}
               />
             </InlineField>
-            <InlineField label="Wrap lines" className={styles.horizontalInlineLabel} transparent>
+            <InlineField label="换行" className={styles.horizontalInlineLabel} transparent>
               <InlineSwitch
                 value={wrapLogMessage}
                 onChange={this.onChangeWrapLogMessage}
@@ -378,7 +378,7 @@ class UnthemedLogs extends PureComponent<Props, State> {
                 id={`wrap-lines_${exploreId}`}
               />
             </InlineField>
-            <InlineField label="Prettify JSON" className={styles.horizontalInlineLabel} transparent>
+            <InlineField label="美化JSON" className={styles.horizontalInlineLabel} transparent>
               <InlineSwitch
                 value={prettifyLogMessage}
                 onChange={this.onChangePrettifyLogMessage}
@@ -401,19 +401,19 @@ class UnthemedLogs extends PureComponent<Props, State> {
             </InlineField>
           </InlineFieldRow>
           <div>
-            <InlineField label="Display results" className={styles.horizontalInlineLabel} transparent>
+            <InlineField label="显示结果" className={styles.horizontalInlineLabel} transparent>
               <RadioButtonGroup
                 disabled={isFlipping}
                 options={[
                   {
-                    label: 'Newest first',
+                    label: '最新优先',
                     value: LogsSortOrder.Descending,
-                    description: 'Show results newest to oldest',
+                    description: '显示结果最新的在最上面',
                   },
                   {
-                    label: 'Oldest first',
+                    label: '最早优先',
                     value: LogsSortOrder.Ascending,
-                    description: 'Show results oldest to newest',
+                    description: '显示结果最早的在最上面',
                   },
                 ]}
                 value={logsSortOrder}

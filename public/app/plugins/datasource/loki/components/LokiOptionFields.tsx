@@ -20,11 +20,11 @@ export interface LokiOptionFieldsProps {
 }
 
 export const queryTypeOptions: Array<SelectableValue<LokiQueryType>> = [
-  { value: LokiQueryType.Range, label: 'Range', description: 'Run query over a range of time.' },
+  { value: LokiQueryType.Range, label: '时段', description: '根据时间段查询' },
   {
     value: LokiQueryType.Instant,
-    label: 'Instant',
-    description: 'Run query against a single point in time. For this query, the "To" time is used.',
+    label: '时刻',
+    description: '根据时间戳查询',
   },
 ];
 
@@ -117,7 +117,7 @@ export function LokiOptionFields(props: LokiOptionFieldsProps) {
         )}
         aria-label="Line limit field"
       >
-        <InlineField label="Line limit" tooltip={'Upper limit for number of log lines returned by query.'}>
+        <InlineField label="最大行数" tooltip={'Upper limit for number of log lines returned by query.'}>
           <Input
             className="width-4"
             placeholder="auto"

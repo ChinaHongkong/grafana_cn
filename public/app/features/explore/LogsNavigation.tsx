@@ -126,7 +126,7 @@ function LogsNavigation({
     >
       <div className={styles.navButtonContent}>
         {loading ? <Spinner /> : <Icon name={oldestLogsFirst ? 'angle-up' : 'angle-down'} size="lg" />}
-        Older logs
+        加载更早
       </div>
     </Button>
   );
@@ -155,7 +155,7 @@ function LogsNavigation({
       <div className={styles.navButtonContent}>
         {loading && <Spinner />}
         {onFirstPage || loading ? null : <Icon name={oldestLogsFirst ? 'angle-down' : 'angle-up'} size="lg" />}
-        {onFirstPage ? 'Start of range' : 'Newer logs'}
+        {onFirstPage ? '起始范围' : '加载更新'}
       </div>
     </Button>
   );

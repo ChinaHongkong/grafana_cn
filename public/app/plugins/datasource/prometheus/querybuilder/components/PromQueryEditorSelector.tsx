@@ -88,7 +88,7 @@ export const PromQueryEditorSelector = React.memo<Props>((props) => {
       <EditorHeader>
         <InlineSelect
           value={null}
-          placeholder="Query patterns"
+          placeholder="查询模式"
           allowCustomValue
           onChange={({ value }) => {
             // TODO: Bit convoluted as we don't have access to visualQuery model here. Maybe would make sense to
@@ -106,7 +106,7 @@ export const PromQueryEditorSelector = React.memo<Props>((props) => {
         <QueryHeaderSwitch label="Explain" value={explain} onChange={onShowExplainChange} />
         {editorMode === QueryEditorMode.Builder && (
           <>
-            <QueryHeaderSwitch label="Raw query" value={rawQuery} onChange={onQueryPreviewChange} />
+            <QueryHeaderSwitch label="原始查询语句" value={rawQuery} onChange={onQueryPreviewChange} />
           </>
         )}
         <FlexItem grow={1} />

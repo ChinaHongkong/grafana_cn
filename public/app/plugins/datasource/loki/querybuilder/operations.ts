@@ -217,7 +217,7 @@ Example: \`\`error_level=\`level\` \`\`
 
     {
       id: LokiOperationId.LineContains,
-      name: 'Line contains',
+      name: '行包括',
       params: [
         {
           name: 'String',
@@ -239,7 +239,7 @@ Example: \`\`error_level=\`level\` \`\`
     },
     {
       id: LokiOperationId.LineContainsNot,
-      name: 'Line does not contain',
+      name: '行不包括',
       params: [
         {
           name: 'String',
@@ -261,7 +261,7 @@ Example: \`\`error_level=\`level\` \`\`
     },
     {
       id: LokiOperationId.LineMatchesRegex,
-      name: 'Line contains regex match',
+      name: '行包含正则表达式匹配',
       params: [
         {
           name: 'Regex',
@@ -283,7 +283,7 @@ Example: \`\`error_level=\`level\` \`\`
     },
     {
       id: LokiOperationId.LineMatchesRegexNot,
-      name: 'Line does not match regex',
+      name: '行包不含正则表达式匹配',
       params: [
         {
           name: 'Regex',

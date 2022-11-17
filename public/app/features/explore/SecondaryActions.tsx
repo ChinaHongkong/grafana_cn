@@ -37,7 +37,7 @@ export function SecondaryActions(props: Props) {
             disabled={props.addQueryRowButtonDisabled}
             icon="plus"
           >
-            Add query
+            添加查询
           </Button>
         )}
         {!props.richHistoryRowButtonHidden && (
@@ -48,7 +48,7 @@ export function SecondaryActions(props: Props) {
             onClick={props.onClickRichHistoryButton}
             icon="history"
           >
-            Query history
+            查询历史
           </Button>
         )}
         <Button
@@ -58,7 +58,7 @@ export function SecondaryActions(props: Props) {
           onClick={props.onClickQueryInspectorButton}
           icon="info-circle"
         >
-          Inspector
+          检查
         </Button>
       </HorizontalGroup>
     </div>

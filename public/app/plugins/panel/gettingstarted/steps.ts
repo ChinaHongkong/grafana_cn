@@ -12,10 +12,10 @@ const step2Key = `${keyPrefix}${step2TutorialTitle.replace(' ', '-').trim().toLo
 
 export const getSteps = (): SetupStep[] => [
   {
-    heading: 'Welcome to Grafana',
-    subheading: 'The steps below will guide you to quickly finish setting up your Grafana installation.',
+    heading: '欢迎来到 Grafana',
+    subheading: '下面的步骤将引导您快速完成设置Grafana安装。',
     title: 'Basic',
-    info: 'The steps below will guide you to quickly finish setting up your Grafana installation.',
+    info: '下面的步骤将引导您快速完成设置Grafana安装。',
     done: false,
     cards: [
       {

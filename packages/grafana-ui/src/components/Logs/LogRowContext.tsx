@@ -103,7 +103,7 @@ const LogRowContextGroupHeader: React.FunctionComponent<LogRowContextGroupHeader
           opacity: 0.6;
         `}
       >
-        Found {rows.length} rows.
+        找到 {rows.length} 条.
       </span>
       {(rows.length >= 10 || (rows.length > 10 && rows.length % 10 !== 0)) && canLoadMoreRows && (
         <span
@@ -116,7 +116,7 @@ const LogRowContextGroupHeader: React.FunctionComponent<LogRowContextGroupHeader
           `}
           onClick={onLoadMoreContext}
         >
-          Load 10 more
+          加载 10 条
         </span>
       )}
     </div>

@@ -102,7 +102,7 @@ export const LokiQueryEditorSelector = React.memo<LokiQueryEditorProps>((props) 
               preSelectedLabelsCount: visualQuery.query.labels.length,
             });
           }}
-          placeholder="Query patterns"
+          placeholder="查询模式"
           aria-label={selectors.components.QueryBuilder.queryPatterns}
           allowCustomValue
           onChange={({ value }: SelectableValue<LokiQueryPattern>) => {
@@ -125,10 +125,10 @@ export const LokiQueryEditorSelector = React.memo<LokiQueryEditorProps>((props) 
           }}
           options={lokiQueryModeller.getQueryPatterns().map((x) => ({ label: x.name, value: x }))}
         />
-        <QueryHeaderSwitch label="Explain" value={explain} onChange={onExplainChange} />
+        <QueryHeaderSwitch label="解释" value={explain} onChange={onExplainChange} />
         {editorMode === QueryEditorMode.Builder && (
           <>
-            <QueryHeaderSwitch label="Raw query" value={rawQuery} onChange={onQueryPreviewChange} />
+            <QueryHeaderSwitch label="原始查询语句" value={rawQuery} onChange={onQueryPreviewChange} />
           </>
         )}
         <FlexItem grow={1} />

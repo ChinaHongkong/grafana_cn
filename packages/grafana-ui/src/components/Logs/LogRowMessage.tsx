@@ -168,10 +168,10 @@ class UnThemedLogRowMessage extends PureComponent<Props> {
               className={cx('log-row-context', style.context, styles.contextButton)}
               onClick={(e) => e.stopPropagation()}
             >
-              <Tooltip placement="top" content={'Show context'}>
+              <Tooltip placement="top" content={'显示上下文'}>
                 <IconButton size="md" name="gf-show-context" onClick={this.onContextToggle} />
               </Tooltip>
-              <Tooltip placement="top" content={'Copy'}>
+              <Tooltip placement="top" content={'复制'}>
                 <IconButton
                   size="md"
                   name="copy"

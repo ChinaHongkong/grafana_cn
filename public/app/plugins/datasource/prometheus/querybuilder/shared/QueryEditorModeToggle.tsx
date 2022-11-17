@@ -10,8 +10,8 @@ export interface Props {
 }
 
 const editorModes = [
-  { label: 'Builder', value: QueryEditorMode.Builder },
-  { label: 'Code', value: QueryEditorMode.Code },
+  { label: '构造器', value: QueryEditorMode.Builder },
+  { label: '代码', value: QueryEditorMode.Code },
 ];
 
 export function QueryEditorModeToggle({ mode, onChange }: Props) {

@@ -50,7 +50,7 @@ export const LokiQueryBuilderOptions = React.memo<Props>(({ app, query, onChange
 
   return (
     <EditorRow>
-      <QueryOptionGroup title="Options" collapsedInfo={getCollapsedInfo(query, queryType, showMaxLines)}>
+      <QueryOptionGroup title="选项" collapsedInfo={getCollapsedInfo(query, queryType, showMaxLines)}>
         <EditorField
           label="Legend"
           tooltip="Series name override or template. Ex. {{hostname}} will be replaced with label value for hostname."
@@ -64,11 +64,11 @@ export const LokiQueryBuilderOptions = React.memo<Props>(({ app, query, onChange
             onCommitChange={onLegendFormatChanged}
           />
         </EditorField>
-        <EditorField label="Type">
+        <EditorField label="类型">
           <RadioButtonGroup options={queryTypeOptions} value={queryType} onChange={onQueryTypeChange} />
         </EditorField>
         {showMaxLines && (
-          <EditorField label="Line limit" tooltip="Upper limit for number of log lines returned by query.">
+          <EditorField label="最大行数" tooltip="Upper limit for number of log lines returned by query.">
             <AutoSizeInput
               className="width-4"
               placeholder="auto"

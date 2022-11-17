@@ -88,7 +88,7 @@ export const Examples: ComponentStory<typeof Button> = () => {
       <HorizontalGroup spacing="lg">
         <div>Inside ButtonGroup</div>
         <ButtonGroup>
-          <Button icon="sync">Run query</Button>
+          <Button icon="sync">执行查询</Button>
           <Button icon="angle-down" />
         </ButtonGroup>
       </HorizontalGroup>
