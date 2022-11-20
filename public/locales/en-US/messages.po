@@ -33,11 +33,11 @@ msgstr "French"
 #: public/app/core/components/SharedPreferences/SharedPreferences.tsx
 #: public/app/features/profile/UserProfileEditForm.tsx
 msgid "common.save"
-msgstr "Save"
+msgstr "保存"
 
 #: public/app/features/inspector/InspectDataOptions.tsx
 msgid "dashboard.inspect-data.data-options"
-msgstr "Data options"
+msgstr "数据选项"
 
 #: public/app/features/inspector/InspectDataOptions.tsx
 msgid "dashboard.inspect-data.dataframe-aria-label"
@@ -309,7 +309,7 @@ msgstr "Library panel saved"
 
 #: public/app/core/components/NavBar/navBarItem-translations.ts
 msgid "nav.alerting"
-msgstr "Alerting"
+msgstr "警报"
 
 #: public/app/core/components/NavBar/navBarItem-translations.ts
 msgid "nav.alerting-admin"
@@ -321,7 +321,7 @@ msgstr "Notification policies"
 
 #: public/app/core/components/NavBar/navBarItem-translations.ts
 msgid "nav.alerting-channels"
-msgstr "Notification channels"
+msgstr "通知渠道"
 
 #: public/app/core/components/NavBar/navBarItem-translations.ts
 msgid "nav.alerting-groups"
@@ -333,15 +333,15 @@ msgstr "Alerting (legacy)"
 
 #: public/app/core/components/NavBar/navBarItem-translations.ts
 msgid "nav.alerting-list"
-msgstr "Alert rules"
+msgstr "警报规则"
 
 #: public/app/core/components/NavBar/navBarItem-translations.ts
 msgid "nav.alerting-receivers"
-msgstr "Contact points"
+msgstr "触发点"
 
 #: public/app/core/components/NavBar/navBarItem-translations.ts
 msgid "nav.alerting-silences"
-msgstr "Silences"
+msgstr "静默时间"
 
 #: public/app/core/components/NavBar/navBarItem-translations.ts
 msgid "nav.api-keys"
@@ -349,43 +349,43 @@ msgstr "API keys"
 
 #: public/app/core/components/NavBar/navBarItem-translations.ts
 msgid "nav.config"
-msgstr "Configuration"
+msgstr "设置"
 
 #: public/app/core/components/NavBar/navBarItem-translations.ts
 msgid "nav.create"
-msgstr "Create"
+msgstr "创建"
 
 #: public/app/core/components/NavBar/navBarItem-translations.ts
 msgid "nav.create-alert"
-msgstr "New alert rule"
+msgstr "新增警报规则"
 
 #: public/app/core/components/NavBar/navBarItem-translations.ts
 msgid "nav.create-dashboard"
-msgstr "Dashboard"
+msgstr "仪表板"
 
 #: public/app/core/components/NavBar/navBarItem-translations.ts
 msgid "nav.create-folder"
-msgstr "Folder"
+msgstr "文件夹"
 
 #: public/app/core/components/NavBar/navBarItem-translations.ts
 msgid "nav.create-import"
-msgstr "Import"
+msgstr "导入"
 
 #: public/app/core/components/NavBar/navBarItem-translations.ts
 msgid "nav.dashboards"
-msgstr "Dashboards"
+msgstr "仪表板"
 
 #: public/app/core/components/NavBar/navBarItem-translations.ts
 msgid "nav.datasources"
-msgstr "Data sources"
+msgstr "数据源"
 
 #: public/app/core/components/NavBar/navBarItem-translations.ts
 msgid "nav.explore"
-msgstr "Explore"
+msgstr "查询器"
 
 #: public/app/core/components/NavBar/navBarItem-translations.ts
 msgid "nav.help"
-msgstr "Help"
+msgstr "帮助"
 
 #: public/app/core/components/NavBar/navBarItem-translations.ts
 msgid "nav.home"
@@ -393,7 +393,7 @@ msgstr "Home"
 
 #: public/app/core/components/NavBar/navBarItem-translations.ts
 msgid "nav.library-panels"
-msgstr "Library panels"
+msgstr "面板库"
 
 #: public/app/core/components/NavBar/navBarItem-translations.ts
 msgid "nav.live"
@@ -413,19 +413,19 @@ msgstr "Status"
 
 #: public/app/core/components/NavBar/navBarItem-translations.ts
 msgid "nav.manage-dashboards"
-msgstr "Browse"
+msgstr "查看浏览"
 
 #: public/app/core/components/NavBar/navBarItem-translations.ts
 msgid "nav.new-dashboard"
-msgstr "New dashboard"
+msgstr "新增仪表板"
 
 #: public/app/core/components/NavBar/navBarItem-translations.ts
 msgid "nav.new-folder"
-msgstr "New folder"
+msgstr "新增文件夹"
 
 #: public/app/core/components/NavBar/navBarItem-translations.ts
 msgid "nav.org-settings"
-msgstr "Preferences"
+msgstr "首选项"
 
 #: public/app/core/components/NavBar/navBarItem-translations.ts
 msgid "nav.playlists"
@@ -433,15 +433,15 @@ msgstr "Playlists"
 
 #: public/app/core/components/NavBar/navBarItem-translations.ts
 msgid "nav.plugins"
-msgstr "Plugins"
+msgstr "插件"
 
 #: public/app/core/components/NavBar/navBarItem-translations.ts
 msgid "nav.profile/password"
-msgstr "Change password"
+msgstr "修改密码"
 
 #: public/app/core/components/NavBar/navBarItem-translations.ts
 msgid "nav.profile/settings"
-msgstr "Preferences"
+msgstr "首选项"
 
 #: public/app/core/components/NavBar/navBarItem-translations.ts
 msgid "nav.service-accounts"
@@ -449,15 +449,15 @@ msgstr "Service accounts"
 
 #: public/app/core/components/NavBar/navBarItem-translations.ts
 msgid "nav.sign-out"
-msgstr "Sign out"
+msgstr "登出"
 
 #: public/app/core/components/NavBar/navBarItem-translations.ts
 msgid "nav.snapshots"
-msgstr "Snapshots"
+msgstr "快照"
 
 #: public/app/core/components/NavBar/navBarItem-translations.ts
 msgid "nav.starred"
-msgstr "Starred"
+msgstr "收藏"
 
 #: public/app/core/components/NavBar/navBarItem-translations.ts
 msgid "nav.starred-empty"
@@ -465,11 +465,11 @@ msgstr "Your starred dashboards will appear here"
 
 #: public/app/core/components/NavBar/navBarItem-translations.ts
 msgid "nav.teams"
-msgstr "Teams"
+msgstr "团队"
 
 #: public/app/core/components/NavBar/navBarItem-translations.ts
 msgid "nav.users"
-msgstr "Users"
+msgstr "用户"
 
 #: public/app/core/navigation/kiosk.ts
 msgid "navigation.kiosk.tv-alert"
@@ -477,7 +477,7 @@ msgstr "Press ESC to exit Kiosk mode"
 
 #: public/app/features/dashboard/utils/getPanelMenu.ts
 msgid "panel.header-menu.inspect"
-msgstr "Inspect"
+msgstr "检查"
 
 #: public/app/features/dashboard/utils/getPanelMenu.ts
 msgid "panel.header-menu.inspect-data"
@@ -497,7 +497,7 @@ msgstr "Toggle legend"
 
 #: public/app/features/dashboard/utils/getPanelMenu.ts
 msgid "panel.header-menu.share"
-msgstr "Share"
+msgstr "分享"
 
 #: public/app/features/dashboard/utils/getPanelMenu.ts
 msgid "panel.header-menu.view"
@@ -505,11 +505,11 @@ msgstr "View"
 
 #: public/app/features/dashboard/components/ShareModal/ShareModal.tsx
 msgid "share-modal.dashboard.title"
-msgstr "Share"
+msgstr "分享"
 
 #: public/app/features/dashboard/components/ShareModal/ShareEmbed.tsx
 msgid "share-modal.embed.copy"
-msgstr "Copy to clipboard"
+msgstr "复制到剪贴板"
 
 #: public/app/features/dashboard/components/ShareModal/ShareEmbed.tsx
 msgid "share-modal.embed.html"
@@ -525,7 +525,7 @@ msgstr "Generate HTML for embedding an iframe with this panel."
 
 #: public/app/features/dashboard/components/ShareModal/ShareEmbed.tsx
 msgid "share-modal.embed.time-range"
-msgstr "Current time range"
+msgstr "当前时间范围"
 
 #: public/app/features/dashboard/components/ShareModal/ShareEmbed.tsx
 msgid "share-modal.embed.time-range-description"
@@ -533,15 +533,15 @@ msgstr "Transforms the current relative time range to an absolute time range"
 
 #: public/app/features/dashboard/components/ShareModal/ShareExport.tsx
 msgid "share-modal.export.cancel-button"
-msgstr "Cancel"
+msgstr "取消"
 
 #: public/app/features/dashboard/components/ShareModal/ShareExport.tsx
 msgid "share-modal.export.info-text"
-msgstr "Export this dashboard."
+msgstr "导出这个仪表板"
 
 #: public/app/features/dashboard/components/ShareModal/ShareExport.tsx
 msgid "share-modal.export.save-button"
-msgstr "Save to file"
+msgstr "保存为文件"
 
 #: public/app/features/dashboard/components/ShareModal/ShareExport.tsx
 msgid "share-modal.export.share-default-label"

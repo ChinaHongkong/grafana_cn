@@ -18,9 +18,9 @@ func (s *ServiceImpl) setupConfigNodes(c *models.ReqContext) ([]*navtree.NavLink
 	hasAccess := ac.HasAccess(s.accessControl, c)
 	if hasAccess(ac.ReqOrgAdmin, datasources.ConfigurationPageAccess) {
 		configNodes = append(configNodes, &navtree.NavLink{
-			Text:        "Data sources",
+			Text:        "数据源",
 			Icon:        "database",
-			Description: "Add and configure data sources",
+			Description: "添加和配置数据源",
 			Id:          "datasources",
 			Url:         s.cfg.AppSubURL + "/datasources",
 		})
@@ -38,7 +38,7 @@ func (s *ServiceImpl) setupConfigNodes(c *models.ReqContext) ([]*navtree.NavLink
 
 	if hasAccess(ac.ReqOrgAdmin, ac.EvalPermission(ac.ActionOrgUsersRead)) {
 		configNodes = append(configNodes, &navtree.NavLink{
-			Text:        "Users",
+			Text:        "用户",
 			Id:          "users",
 			Description: "Invite and assign roles to users",
 			Icon:        "user",
@@ -48,7 +48,7 @@ func (s *ServiceImpl) setupConfigNodes(c *models.ReqContext) ([]*navtree.NavLink
 
 	if hasAccess(s.ReqCanAdminTeams, ac.TeamsAccessEvaluator) {
 		configNodes = append(configNodes, &navtree.NavLink{
-			Text:        "Teams",
+			Text:        "团队",
 			Id:          "teams",
 			Description: "Groups of users that have common dashboard and permission needs",
 			Icon:        "users-alt",
@@ -59,7 +59,7 @@ func (s *ServiceImpl) setupConfigNodes(c *models.ReqContext) ([]*navtree.NavLink
 	// FIXME: while we don't have a permissions for listing plugins the legacy check has to stay as a default
 	if plugins.ReqCanAdminPlugins(s.cfg)(c) || hasAccess(plugins.ReqCanAdminPlugins(s.cfg), plugins.AdminAccessEvaluator) {
 		configNodes = append(configNodes, &navtree.NavLink{
-			Text:        "Plugins",
+			Text:        "插件",
 			Id:          "plugins",
 			Description: "Extend the Grafana experience with plugins",
 			Icon:        "plug",
@@ -69,7 +69,7 @@ func (s *ServiceImpl) setupConfigNodes(c *models.ReqContext) ([]*navtree.NavLink
 
 	if hasAccess(ac.ReqOrgAdmin, ac.OrgPreferencesAccessEvaluator) {
 		configNodes = append(configNodes, &navtree.NavLink{
-			Text:        "Preferences",
+			Text:        "首选项",
 			Id:          "org-settings",
 			Description: "Manage preferences across an organization",
 			Icon:        "sliders-v-alt",
