@@ -16,13 +16,6 @@ trigger_oss = {
         'grafana/grafana',
     ]
 }
-trigger_storybook = {
-    'paths': {
-        'include': [
-            'packages/grafana-ui/**',
-        ],
-    }
-}
 
 
 def slack_step(channel, template, secret):
@@ -259,7 +252,7 @@ def build_storybook_step(edition, ver_mode):
             'yarn storybook:build',
             './bin/grabpl verify-storybook',
         ],
-        'when': trigger_storybook,
+        'when': get_trigger_storybook(ver_mode),
     }
 
 
@@ -287,7 +280,7 @@ def store_storybook_step(edition, ver_mode, trigger=None):
             'PRERELEASE_BUCKET': from_secret(prerelease_bucket)
         },
         'commands': commands,
-        'when': trigger_storybook,
+        'when': get_trigger_storybook(ver_mode),
     }
     if trigger and ver_mode in ("release-branch", "main"):
         # no dict merge operation available, https://github.com/harness/drone-cli/pull/220
@@ -829,7 +822,7 @@ def publish_images_step(edition, ver_mode, mode, docker_repo, trigger=None):
     else:
         mode = ''
 
-    cmd = './bin/grabpl artifacts docker publish {}--dockerhub-repo {} --base alpine --base ubuntu --arch amd64 --arch arm64 --arch armv7'.format(
+    cmd = './bin/grabpl artifacts docker publish {}--dockerhub-repo {}'.format(
         mode, docker_repo)
 
     if ver_mode == 'release':
@@ -1276,3 +1269,19 @@ def compile_build_cmd(edition='oss'):
             'CGO_ENABLED': 0,
     },
 }
+
+def get_trigger_storybook(ver_mode):
+    trigger_storybook = ''
+    if ver_mode == 'release':
+        trigger_storybook = {
+            'event': ['tag']
+        }
+    else:
+        trigger_storybook = {
+            'paths': {
+                'include': [
+                    'packages/grafana-ui/**',
+                ],
+            }
+        }
+    return trigger_storybook
