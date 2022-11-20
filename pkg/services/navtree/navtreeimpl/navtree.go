@@ -63,7 +63,7 @@ func (s *ServiceImpl) GetNavTree(c *models.ReqContext, hasEditPerm bool, prefs *
 		}
 
 		navTree = append(navTree, &navtree.NavLink{
-			Text:           "Starred",
+			Text:           "收藏",
 			Id:             "starred",
 			Icon:           "star",
 			SortWeight:     navtree.WeightSavedItems,
@@ -79,7 +79,7 @@ func (s *ServiceImpl) GetNavTree(c *models.ReqContext, hasEditPerm bool, prefs *
 		dashboardsUrl := "/dashboards"
 
 		dashboardLink := &navtree.NavLink{
-			Text:        "Dashboards",
+			Text:        "仪表板",
 			Id:          "dashboards",
 			Description: "Create and manage dashboards to visualize your data",
 			SubTitle:    "Manage dashboards and folders",
@@ -103,7 +103,7 @@ func (s *ServiceImpl) GetNavTree(c *models.ReqContext, hasEditPerm bool, prefs *
 
 	if setting.ExploreEnabled && hasAccess(canExplore, ac.EvalPermission(ac.ActionDatasourcesExplore)) {
 		navTree = append(navTree, &navtree.NavLink{
-			Text:       "Explore",
+			Text:       "查询器",
 			Id:         "explore",
 			SubTitle:   "Explore your data",
 			Icon:       "compass",
@@ -183,7 +183,7 @@ func (s *ServiceImpl) GetNavTree(c *models.ReqContext, hasEditPerm bool, prefs *
 	if len(configNodes) > 0 {
 		configNode = &navtree.NavLink{
 			Id:         navtree.NavIDCfg,
-			Text:       "Configuration",
+			Text:       "设置",
 			SubTitle:   "Organization: " + c.OrgName,
 			Icon:       "cog",
 			Url:        configNodes[0].Url,
@@ -231,7 +231,7 @@ func (s *ServiceImpl) addHelpLinks(navTree []*navtree.NavLink, c *models.ReqCont
 		}
 
 		navTree = append(navTree, &navtree.NavLink{
-			Text:       "Help",
+			Text:       "帮助",
 			SubTitle:   helpVersion,
 			Id:         "help",
 			Url:        "#",
@@ -261,7 +261,7 @@ func (s *ServiceImpl) getProfileNode(c *models.ReqContext) *navtree.NavLink {
 
 	children := []*navtree.NavLink{
 		{
-			Text: "Preferences", Id: "profile/settings", Url: s.cfg.AppSubURL + "/profile", Icon: "sliders-v-alt",
+			Text: "首选项", Id: "profile/settings", Url: s.cfg.AppSubURL + "/profile", Icon: "sliders-v-alt",
 		},
 	}
 
@@ -271,7 +271,7 @@ func (s *ServiceImpl) getProfileNode(c *models.ReqContext) *navtree.NavLink {
 
 	if setting.AddChangePasswordLink() {
 		children = append(children, &navtree.NavLink{
-			Text: "Change password", Id: "profile/password", Url: s.cfg.AppSubURL + "/profile/password",
+			Text: "修改密码", Id: "profile/password", Url: s.cfg.AppSubURL + "/profile/password",
 			Icon: "lock",
 		})
 	}
@@ -279,7 +279,7 @@ func (s *ServiceImpl) getProfileNode(c *models.ReqContext) *navtree.NavLink {
 	if !setting.DisableSignoutMenu {
 		// add sign out first
 		children = append(children, &navtree.NavLink{
-			Text:         "Sign out",
+			Text:         "登出",
 			Id:           "sign-out",
 			Url:          s.cfg.AppSubURL + "/logout",
 			Icon:         "arrow-from-right",
@@ -356,7 +356,7 @@ func (s *ServiceImpl) buildDashboardNavLinks(c *models.ReqContext, hasEditPerm b
 	dashboardChildNavs := []*navtree.NavLink{}
 	if !s.features.IsEnabled(featuremgmt.FlagTopnav) {
 		dashboardChildNavs = append(dashboardChildNavs, &navtree.NavLink{
-			Text: "Browse", Id: "dashboards/browse", Url: s.cfg.AppSubURL + "/dashboards", Icon: "sitemap",
+			Text: "浏览", Id: "dashboards/browse", Url: s.cfg.AppSubURL + "/dashboards", Icon: "sitemap",
 		})
 	}
 	dashboardChildNavs = append(dashboardChildNavs, &navtree.NavLink{
@@ -365,7 +365,7 @@ func (s *ServiceImpl) buildDashboardNavLinks(c *models.ReqContext, hasEditPerm b
 
 	if c.IsSignedIn {
 		dashboardChildNavs = append(dashboardChildNavs, &navtree.NavLink{
-			Text:        "Snapshots",
+			Text:        "快照",
 			Description: "Interactive, publically available, point-in-time representations of dashboards",
 			Id:          "dashboards/snapshots",
 			Url:         s.cfg.AppSubURL + "/dashboard/snapshots",
@@ -373,7 +373,7 @@ func (s *ServiceImpl) buildDashboardNavLinks(c *models.ReqContext, hasEditPerm b
 		})
 
 		dashboardChildNavs = append(dashboardChildNavs, &navtree.NavLink{
-			Text:        "Library panels",
+			Text:        "面板库",
 			Description: "Reusable panels that can be added to multiple dashboards",
 			Id:          "dashboards/library-panels",
 			Url:         s.cfg.AppSubURL + "/library-panels",
@@ -383,7 +383,7 @@ func (s *ServiceImpl) buildDashboardNavLinks(c *models.ReqContext, hasEditPerm b
 
 	if s.features.IsEnabled(featuremgmt.FlagScenes) {
 		dashboardChildNavs = append(dashboardChildNavs, &navtree.NavLink{
-			Text: "Scenes",
+			Text: "场景",
 			Id:   "scenes",
 			Url:  s.cfg.AppSubURL + "/scenes",
 			Icon: "apps",
@@ -403,14 +403,14 @@ func (s *ServiceImpl) buildDashboardNavLinks(c *models.ReqContext, hasEditPerm b
 
 		if hasAccess(ac.ReqOrgAdminOrEditor, ac.EvalPermission(dashboards.ActionFoldersCreate)) {
 			dashboardChildNavs = append(dashboardChildNavs, &navtree.NavLink{
-				Text: "New folder", SubTitle: "Create a new folder to organize your dashboards", Id: "dashboards/folder/new",
+				Text: "新文件夹", SubTitle: "Create a new folder to organize your dashboards", Id: "dashboards/folder/new",
 				Icon: "plus", Url: s.cfg.AppSubURL + "/dashboards/folder/new", HideFromTabs: true, ShowIconInNavbar: true,
 			})
 		}
 
 		if hasAccess(hasEditPermInAnyFolder, ac.EvalPermission(dashboards.ActionDashboardsCreate)) {
 			dashboardChildNavs = append(dashboardChildNavs, &navtree.NavLink{
-				Text: "Import", SubTitle: "Import dashboard from file or Grafana.com", Id: "dashboards/import", Icon: "plus",
+				Text: "导入", SubTitle: "Import dashboard from file or Grafana.com", Id: "dashboards/import", Icon: "plus",
 				Url: s.cfg.AppSubURL + "/dashboard/import", HideFromTabs: true, ShowIconInNavbar: true,
 			})
 		}
@@ -421,7 +421,7 @@ func (s *ServiceImpl) buildDashboardNavLinks(c *models.ReqContext, hasEditPerm b
 func (s *ServiceImpl) buildLegacyAlertNavLinks(c *models.ReqContext) []*navtree.NavLink {
 	var alertChildNavs []*navtree.NavLink
 	alertChildNavs = append(alertChildNavs, &navtree.NavLink{
-		Text: "Alert rules", Id: "alert-list", Url: s.cfg.AppSubURL + "/alerting/list", Icon: "list-ul",
+		Text: "警报规则", Id: "alert-list", Url: s.cfg.AppSubURL + "/alerting/list", Icon: "list-ul",
 	})
 
 	if c.HasRole(org.RoleEditor) {
@@ -432,7 +432,7 @@ func (s *ServiceImpl) buildLegacyAlertNavLinks(c *models.ReqContext) []*navtree.
 	}
 
 	var alertNav = navtree.NavLink{
-		Text:        "Alerting",
+		Text:        "警报",
 		Description: "Learn about problems in your systems moments after they occur",
 		SubTitle:    "Alert rules and notifications",
 		Id:          "alerting-legacy",
@@ -457,13 +457,13 @@ func (s *ServiceImpl) buildAlertNavLinks(c *models.ReqContext, hasEditPerm bool)
 
 	if hasAccess(ac.ReqViewer, ac.EvalAny(ac.EvalPermission(ac.ActionAlertingRuleRead), ac.EvalPermission(ac.ActionAlertingRuleExternalRead))) {
 		alertChildNavs = append(alertChildNavs, &navtree.NavLink{
-			Text: "Alert rules", Description: "Rules that determine whether an alert will fire", Id: "alert-list", Url: s.cfg.AppSubURL + "/alerting/list", Icon: "list-ul",
+			Text: "警报规则", Description: "Rules that determine whether an alert will fire", Id: "alert-list", Url: s.cfg.AppSubURL + "/alerting/list", Icon: "list-ul",
 		})
 	}
 
 	if hasAccess(ac.ReqOrgAdminOrEditor, ac.EvalAny(ac.EvalPermission(ac.ActionAlertingNotificationsRead), ac.EvalPermission(ac.ActionAlertingNotificationsExternalRead))) {
 		alertChildNavs = append(alertChildNavs, &navtree.NavLink{
-			Text: "Contact points", Description: "Decide how your contacts are notified when an alert fires", Id: "receivers", Url: s.cfg.AppSubURL + "/alerting/notifications",
+			Text: "触发点", Description: "Decide how your contacts are notified when an alert fires", Id: "receivers", Url: s.cfg.AppSubURL + "/alerting/notifications",
 			Icon: "comment-alt-share", SubTitle: "Manage the settings of your contact points",
 		})
 		alertChildNavs = append(alertChildNavs, &navtree.NavLink{Text: "Notification policies", Description: "Determine how alerts are routed to contact points", Id: "am-routes", Url: s.cfg.AppSubURL + "/alerting/routes", Icon: "sitemap"})
@@ -489,15 +489,15 @@ func (s *ServiceImpl) buildAlertNavLinks(c *models.ReqContext, hasEditPerm bool)
 		})
 
 		alertChildNavs = append(alertChildNavs, &navtree.NavLink{
-			Text: "New alert rule", SubTitle: "Create an alert rule", Id: "alert",
+			Text: "新增警报规则", SubTitle: "Create an alert rule", Id: "alert",
 			Icon: "plus", Url: s.cfg.AppSubURL + "/alerting/new", HideFromTabs: true, ShowIconInNavbar: true,
 		})
 	}
 
 	if len(alertChildNavs) > 0 {
 		var alertNav = navtree.NavLink{
-			Text:        "Alerting",
-			Description: "Learn about problems in your systems moments after they occur",
+			Text:        "警报",
+			Description: "及时了解您系统发生的问题",
 			SubTitle:    "Alert rules and notifications",
 			Id:          "alerting",
 			Icon:        "bell",
@@ -526,17 +526,17 @@ func (s *ServiceImpl) buildDataConnectionsNavLink(c *models.ReqContext) *navtree
 
 	children = append(children, &navtree.NavLink{
 		Id:          baseId + "-datasources",
-		Text:        "Data sources",
+		Text:        "数据源",
 		Icon:        "database",
-		Description: "Add and configure data sources",
+		Description: "添加和配置数据源",
 		Url:         baseUrl + "/datasources",
 	})
 
 	children = append(children, &navtree.NavLink{
 		Id:          baseId + "-plugins",
-		Text:        "Plugins",
+		Text:        "插件",
 		Icon:        "plug",
-		Description: "Manage plugins",
+		Description: "管理插件",
 		Url:         baseUrl + "/plugins",
 	})
 
@@ -549,7 +549,7 @@ func (s *ServiceImpl) buildDataConnectionsNavLink(c *models.ReqContext) *navtree
 	})
 
 	navLink = &navtree.NavLink{
-		Text:       "Data Connections",
+		Text:       "数据连接",
 		Icon:       "link",
 		Id:         baseId,
 		Url:        baseUrl,
@@ -569,27 +569,27 @@ func (s *ServiceImpl) buildAdminNavLinks(c *models.ReqContext) []*navtree.NavLin
 
 	if hasAccess(ac.ReqGrafanaAdmin, ac.EvalPermission(ac.ActionUsersRead, ac.ScopeGlobalUsersAll)) {
 		adminNavLinks = append(adminNavLinks, &navtree.NavLink{
-			Text: "Users", Description: "Manage and create users across the whole Grafana server", Id: "global-users", Url: s.cfg.AppSubURL + "/admin/users", Icon: "user",
+			Text: "用户", Description: "管理和创建用户在整个Grafana上", Id: "global-users", Url: s.cfg.AppSubURL + "/admin/users", Icon: "user",
 		})
 	}
 
 	if hasGlobalAccess(ac.ReqGrafanaAdmin, orgsAccessEvaluator) {
 		adminNavLinks = append(adminNavLinks, &navtree.NavLink{
-			Text: "Organizations", Description: "Isolated instances of Grafana running on the same server", Id: "global-orgs", Url: s.cfg.AppSubURL + "/admin/orgs", Icon: "building",
+			Text: "组织", Description: "Isolated instances of Grafana running on the same server", Id: "global-orgs", Url: s.cfg.AppSubURL + "/admin/orgs", Icon: "building",
 		})
 	}
 
 	if hasAccess(ac.ReqGrafanaAdmin, ac.EvalPermission(ac.ActionSettingsRead)) {
 		adminNavLinks = append(adminNavLinks, &navtree.NavLink{
-			Text: "Settings", Description: "View the settings defined in your Grafana config", Id: "server-settings", Url: s.cfg.AppSubURL + "/admin/settings", Icon: "sliders-v-alt",
+			Text: "设置", Description: "查看Grafana的设置", Id: "server-settings", Url: s.cfg.AppSubURL + "/admin/settings", Icon: "sliders-v-alt",
 		})
 	}
 
 	if hasAccess(ac.ReqGrafanaAdmin, ac.EvalPermission(ac.ActionSettingsRead)) && s.features.IsEnabled(featuremgmt.FlagStorage) {
 		adminNavLinks = append(adminNavLinks, &navtree.NavLink{
-			Text:        "Storage",
+			Text:        "存储",
 			Id:          "storage",
-			Description: "Manage file storage",
+			Description: "管理文件存储",
 			Icon:        "cube",
 			Url:         s.cfg.AppSubURL + "/admin/storage",
 		})
