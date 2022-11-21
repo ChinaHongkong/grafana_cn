@@ -19,10 +19,10 @@ node
 6. 打包会生成public/build         还有public/view里的一些文件
 
 打包rpm
-先编译前端
-再编译后端把编译后的文件放到bin目录下
-安装nfpm版本2.22.1
-mkdir dist
-nfpm pkg --packager rpm --config packaging/conf/nfpm_rpm.yaml --target dist/
-在dist目录生成相应的rpm文件
-通过yum install  rpm文件名   安装
+1. 先编译前端
+2. 再编译后端把编译后的文件放到bin目录下
+3. 安装nfpm版本2.22.1
+4. mkdir dist
+5. nfpm pkg --packager rpm --config packaging/conf/nfpm_rpm.yaml --target dist/
+6. 在dist目录生成相应的rpm文件
+7. 通过yum install  rpm文件名   安装
