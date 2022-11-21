@@ -210,7 +210,7 @@ export const DataSourceHttpSettings: React.FC<HttpSettingsProps> = (props) => {
         <h3 className="page-heading">Auth</h3>
         <div className="gf-form-group">
           <div className="gf-form-inline">
-            <InlineField label="Basic auth" labelWidth={LABEL_WIDTH}>
+            <InlineField label="基本认证" labelWidth={LABEL_WIDTH}>
               <InlineSwitch
                 id="http-settings-basic-auth"
                 value={dataSourceConfig.basicAuth}
@@ -281,7 +281,7 @@ export const DataSourceHttpSettings: React.FC<HttpSettingsProps> = (props) => {
         </div>
         {dataSourceConfig.basicAuth && (
           <>
-            <h6>Basic Auth Details</h6>
+            <h6>基本认证详情</h6>
             <div className="gf-form-group">
               <BasicAuthSettings {...props} />
             </div>

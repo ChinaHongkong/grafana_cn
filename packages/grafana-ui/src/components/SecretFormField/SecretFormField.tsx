@@ -40,13 +40,13 @@ const getSecretFormFieldStyles = () => {
  * to the user (like datasource passwords).
  */
 export const SecretFormField: FunctionComponent<Props> = ({
-  label = 'Password',
+  label = '密码',
   labelWidth,
   inputWidth = 12,
   onReset,
   isConfigured,
   tooltip,
-  placeholder = 'Password',
+  placeholder = '密码',
   interactive,
   ...inputProps
 }: Props) => {
@@ -64,11 +64,11 @@ export const SecretFormField: FunctionComponent<Props> = ({
               type="text"
               className={cx(`gf-form-input width-${inputWidth}`, styles.noRadiusInput)}
               disabled={true}
-              value="configured"
+              value="已配置"
               {...omit(inputProps, 'value')}
             />
             <Button onClick={onReset} variant="secondary" type="button">
-              Reset
+              重置
             </Button>
           </>
         ) : (
